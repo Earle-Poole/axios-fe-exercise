@@ -8,9 +8,9 @@ const Story = (props: StoryProps) => {
     return (
       <StoryWrapper isMobile={props.isMobile} onClick={() => window.open(props.story.permalink)}>
         {props.isMobile ? (
-          <MobileImage src={props.story.primary_image.base_image_url} />
+          <MobileImage src={props.story.primary_image?.base_image_url} />
         ) : (
-          <DesktopImage src={props.story.primary_image.base_image_url} />
+          <DesktopImage src={props.story.primary_image?.base_image_url} />
         )}
         <SectionText isMobile={props.isMobile}>
           {!props.isMobile ? props.story.sections[0]?.name ?? '' : undefined}
